@@ -1,0 +1,50 @@
+      
+
+      header {
+      	background-color: rgb(10 10 97);
+      	text-align: right;
+      	padding: 10px 0;
+      	border: 2px solid black;
+      }
+
+      /*nav {
+      	display: flex;
+      	justify-content: flex-end;
+      }*/
+
+      nav a {
+      	color: white;
+      	text-decoration: none;
+      	margin-right: 20px;
+      	text-align: right;
+      }
+
+      h1 {
+      	text-align: center;
+      	color: black;
+      }
+
+      .student-info {
+      	background-color: #fff;
+      	border: 1px solid #ccc;
+      	border-radius: 5px;
+      	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      	padding: 20px;
+      	width: 50%;
+      	margin: 0 auto;
+
+      }
+
+      .anulado {
+      	background-color: #ff0000;
+      	color: #fff;
+      	text-align: center;
+      	padding: 10px;
+      	margin: 10px 0;
+      }
+
+      /*.detail-link {
+      	text-align: center;
+      }*/
+
+      

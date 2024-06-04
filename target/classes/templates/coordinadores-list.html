@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>USUARIOS</title>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--FAVICON-->
+    
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    
+</head>
+
+<style>
+    body {
+        background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpt82gS8apKb0ap_q8Kd8YShr6hmkh1_x1XmuLvIhdgqc7SnKa1l_Y-SxYeN3Oz7c8QMR1p9QAp_VvB22DoB22Yz3wJnLI23kJxWHL3hR8QoqWyuSxWcDzCZLYut-JPiIEliRAFqj1zDLLnM1Kw2eDwUbgJ9RZOIGpPMAwYZk-uCMUw28mVr5J3ywI9g/s3840/horizon-call-of-the-3840x2160-582023.jpg);
+        background-position: center center;
+        background-attachment: fixed;
+        font-family: 'Righteous', cursive;
+    }
+
+    .button {
+        background-color: #0A0A61;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #1141E8;
+    }
+
+    .table-container {
+        margin-top: 20px;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .table th {
+        background-color: #0A0A61;
+        color: white;
+    }
+
+    .table td {
+        background-color: rgb(192, 192, 192);
+        color: black;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgb(192, 192, 192);
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: rgb(192, 192, 192);
+    }
+
+    .button-add {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    /* Estilo para el texto dentro de las tarjetas gamer */
+    .card-title,
+    .card-text {
+        color: white;
+    }
+
+</style>
+
+<body>
+
+    <header>
+        <div class="ml-auto mr-4" style="display: inline-block;">
+            <button class="btn btn-danger">
+                <a th:href="@{/}" style="color: white; text-decoration: none;"><strong>Cerrar sesión</strong></a>
+            </button>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0A0A61;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/coordinadores/}" style="color: aliceblue;"><strong>USUARIOS</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/estudiantes/}" style="color: aliceblue;"><strong>    ADMINISTRADORES</strong></a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="container ">
+            <div style="display: flex; flex-direction: column;">
+                <center>
+                    <h1 style=" border-radius: 10px; padding: 10px; max-width: 100%; margin: 0;  color: black; margin-top: 20px">
+                        USUARIOS</h1>
+                        
+                </center>
+                <br>
+            </div>
+
+            <table class="table table-striped"
+                style="border: 2px solid black; background-color:rgb(192, 192, 192); text-align: left; color: white; padding: 10px; border: 0px solid #ddd;">
+                <thead>
+                    <tr style="border: 2px solid black; font-family: 'Roboto Slab', serif; text-align: center" class="">
+                        <td><strong>Nombre</strong></td>
+                        <td><strong>Apellidos</strong></td>
+                        <td><strong>Documento</strong></td>
+                        <td><strong>Celular</strong></td>
+                        <td><strong>Usuario</strong></td>
+                        <td><strong>Editar</strong></td>
+                        <td><strong>Eliminar</strong></td>
+                    </tr>
+                </thead>
+                <tbody
+                    style="border: 2px solid black; text-align: center;    padding: 8px; border: px solid #ddd; color: white; align-items: center; background-color: rgb(226, 231, 228); color: rgb(0, 0, 0);">
+                    <tr th:each="coordinador : ${coordinadores}">
+                        <td>[[ ${coordinador.nombre} ]]</td>
+                        <td>[[ ${coordinador.apellidos} ]]</td>
+                        <td>[[ ${coordinador.documento} ]]</td>
+                        <td>[[ ${coordinador.celular} ]]</td>
+                        <td>[[ ${coordinador.user} ]]</td>
+                        <td>
+                            <a class="mx-3 text-warning" th:href="@{/coordinadores/edit/{id}(id = ${coordinador.id})}">
+                                <svg class="bi bi-pencil-square edit-icon" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd"
+                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                </svg>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="mx-3 text-danger" th:href="@{/coordinadores/delete/{id}(id = ${coordinador.id})}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-x-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <div class="container mt-3">
+        <div class="text-center">
+            <a th:href="@{/coordinadores/new}" class="btn btn-primary" style="background-color: #0A0A61;"><strong>AGREGAR USUARIOS</strong></a>
+        </div>
+    </div>
+
+    <!-- Gamer Cards -->
+    <div class="container mt-3">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card" style="background-color: #0A0A61;">
+                    <img src="					https://assets.nuuvem.com/image/upload/t_product_sharing_banner/v1/products/61716faa61eca53a843588af/sharing_images/lcwz6ohd1c3iurp3jtwo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">						God of War</h5>
+                 
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color: #0A0A61;">
+                    <img src="					https://wpassets.halowaypoint.com/wp-content/2024/04/EtherealEOD_Cover.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Halo</h5>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="background-color: #0A0A61;">
+                    <img src="					https://store-images.s-microsoft.com/image/apps.52315.68607194681373551.b4c09a44-be36-42d6-96c5-4a33b566becd.9199c63b-06f1-41b5-8118-c1d2373ee86a?q=90&w=480&h=270" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">	 Gears of War 3 </h5>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

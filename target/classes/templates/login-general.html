@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Righteous', sans-serif;
+            background-image: url('						https://images3.alphacoders.com/593/thumb-1920-593826.jpg'); /* Reemplaza 'tu-imagen-de-fondo.jpg' con la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Ajusta la opacidad del fondo blanco si es necesario */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #0a0a61;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ccc;
+            margin: 20px 0;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #0a0a61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #090947;
+        }
+
+        /* Estilos específicos para cada formulario */
+        .form {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>Bienvenidos a GamerForge Studios</header>
+        <hr>
+        <div class="form signup">
+            <header>			Administradores</header>
+            <form action="/estudiantes/ingresar" method="post">
+                <input type="text" id="numeroDocumento" name="numeroDocumento" placeholder="Usuario" required>
+                <input type="text" id="numeroRegistro" name="numeroRegistro" placeholder="Contraseña" required>
+                <div style="color: red;">
+                    <p></p>
+                </div>
+                <input type="submit" value="Ingresar">
+            </form>
+        </div>
+
+        <div class="form login">
+            <header>	Usuarios</header>
+            <form action="/coordinadores/ingresar" method="post">
+                <input type="text" id="user" name="user" placeholder="Usuario" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <div style="color: red;">
+                    <p></p>
+                </div>
+                <input type="submit" value="Ingresar">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

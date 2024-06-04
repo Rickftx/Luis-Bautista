@@ -1,0 +1,132 @@
+@charset "ISO-8859-1";
+
+.cont {
+	text-align: center;
+}
+
+.cont-form {
+	background: linear-gradient(60deg,#E0EFCC, #ffffff, #EDEEF0,#ffffff,#E0EFCC);
+	margin-top: 50px;
+	margin-left: 480px;
+	margin-right: 480px;
+	margin-bottom: 50px;
+	border-radius: 10px;
+	box-shadow: -1px 3px 15px -2px rgba(0, 0, 0, 0.96);
+	
+}
+
+.titulo {
+	font-size: 39px;
+	padding: 15px;
+	color: rgb(0, 0, 0);
+}
+
+.formulario {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.grupo {
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+label {
+	padding-top: 13px;
+	color: rgb(0, 0, 0);
+	font-style: bold;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: left;
+}
+
+.entrada {
+	-webkit-box-shadow: -1px 3px 7px -2px rgba(0, 0, 0, 0.96);
+	-moz-box-shadow: -1px 3px 7px -2px rgba(0, 0, 0, 0.96);
+	box-shadow: -1px 3px 7px -2px rgba(0, 0, 0, 0.96);
+}
+
+
+.scroll-box {
+	max-height: 200px;
+	/* Establece la altura máxima para el cuadro de desplazamiento */
+	overflow-y: scroll;
+	/* Agrega una barra de desplazamiento vertical */
+	border: 1px solid #ccc;
+	/* Agrega un borde alrededor del cuadro de desplazamiento (opcional) */
+	border: 1px solid black;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* Estilos para los checkboxes personalizados */
+.custom-checkbox-label {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	/* Aumentado el margen inferior para separar los checkboxes */
+}
+
+.custom-checkbox-input {
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 20px;
+	/* Ajusta el tamaño del checkbox según tus preferencias */
+	height: 20px;
+	border: 2px solid #ccc;
+	/* Color del borde */
+	border-radius: 4px;
+	/* Ajusta el radio de los bordes según tus preferencias */
+	outline: none;
+	/* Elimina el contorno predeterminado del checkbox */
+	margin-right: 8px;
+	position: relative;
+}
+
+.custom-checkbox-input:checked {
+	border-color: rgb(0, 128, 255);
+	/* Color del borde cuando está seleccionado */
+	background-color: rgb(0, 128, 192);
+	/* Color de fondo cuando está seleccionado */
+}
+
+.custom-checkbox-input:checked::before {
+	content: '\2713';
+	/* Código de la palomita */
+	color: white;
+	/* Color de la palomita */
+	font-size: 14px;
+	/* Tamaño de la palomita */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.button {
+	display: inline-block;
+	background-color:#0A0A61;
+	color: #fff;
+	padding: 12px 50px;
+	margin: 30px;
+	text-decoration: none;
+	border: 2px solid black;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background-color:#1141E8;
+	text-decoration: none;
+	color: #fff;
+	opacity: 80%;
+	border: 2px solid black;
+
+}
+
