@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ADMINISTRADORES</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--FAVICON-->
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    .edit-icon {
+        fill: green;
+        /* Cambia el color de relleno del ícono a verde */
+    }
+
+    body {
+        background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpt82gS8apKb0ap_q8Kd8YShr6hmkh1_x1XmuLvIhdgqc7SnKa1l_Y-SxYeN3Oz7c8QMR1p9QAp_VvB22DoB22Yz3wJnLI23kJxWHL3hR8QoqWyuSxWcDzCZLYut-JPiIEliRAFqj1zDLLnM1Kw2eDwUbgJ9RZOIGpPMAwYZk-uCMUw28mVr5J3ywI9g/s3840/horizon-call-of-the-3840x2160-582023.jpg);
+        background-position: center center;
+        background-attachment: fixed;
+        font-family: 'Righteous', cursive;
+    }
+
+    #nav_princ {
+        height: 80px;
+    }
+
+    .button_list {
+        background: #0A0A61;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        margin-right: 2%;
+        border-radius: 5px;
+        color: aliceblue;
+        font-size: 120%;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px;
+        border: 1px solid white;
+    }
+
+    .button_list:hover {
+        background-color: rgb(255, 0, 0);
+        /* Cambia el color de fondo al pasar el cursor por encima */
+        color: white;
+        /* Cambia el color del texto al pasar el cursor por encima */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        /* Agrega una sombra al pasar el cursor por encima */
+    }
+
+    .button_cerrar {
+        background-color: rgb(255, 0, 0);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        color: black;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 0.5%;
+        border: 3px solid white;
+        border-radius: 5px;
+    }
+
+    .button_cerrar:hover {
+        background-color: black;
+        /* Cambia el color de fondo al pasar el cursor por encima */
+        color: black;
+        /* Cambia el color del texto al pasar el cursor por encima */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        /* Agrega una sombra al pasar el cursor por encima */
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 15px;
+        border-top: 3px solid white;
+        display: inline-block;
+        font-family: 'Roboto Slab', serif;
+    }
+</style>
+
+<body>
+
+    <header>
+        <div class="ml-auto mr-4" style="display: inline-block;">
+            <button class="btn btn-danger">
+                <a th:href="@{/}" style="color: white; text-decoration: none;"><strong>Cerrar sesión</strong></a>
+            </button>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0A0A61;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/coordinadores/}" style="color: aliceblue;"><strong>USUARIOS</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/estudiantes/}" style="color: aliceblue;"><strong> ADMINISTRADORES</strong></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="container ">
+
+            <div style="display: flex; flex-direction: column;">
+                <center>
+                    <h1 style=" border-radius: 10px; padding: 10px; max-width: 100%; margin: 0;  color: rgb(0, 0, 0); margin-top: 20px">
+                        ADMINISTRADORES</h1>
+                    <img src="" alt="" style="width: 80px; ">
+                </center>
+                <br>
+
+                <table class="table table-striped"
+                    style="border: 2px solid black; background-color:rgb(128, 128, 128); text-align: left; color: white; padding: 10px; border: 0px solid #ddd;">
+                    <thead>
+                        <tr style="border: 2px solid black; font-family: 'Roboto Slab', serif; text-align: center" class="">
+                            <td style="vertical-align: middle;"><strong>Tipo Documento</strong></td>
+                            <td style="vertical-align: middle;"><strong>Documento</strong></td>
+                            <td style="vertical-align: middle;"><strong>Primer Apellido</strong></td>
+                            <td style="vertical-align: middle;"><strong>Segundo Apellido</strong></td>
+                            <td style="vertical-align: middle;"><strong>Primer Nombre</strong></td>
+                            <td style="vertical-align: middle;"><strong>Segundo Nombre</strong></td>
+                            <td style="vertical-align: middle;"><strong>Correo</strong></td>
+                            <td style="vertical-align: middle;"><strong>Telefono</strong></td>
+                            <td style="vertical-align: middle;"><strong>Contraseña</strong></td>
+                            <td style="vertical-align: middle;"><strong>Revisado</strong></td>
+                            <td style="vertical-align: middle;"><strong>Editar</strong></td>
+                            <td style="vertical-align: middle;"><strong>Eliminar</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody
+                        style="vertical-align: middle; border: 2px solid black; text-align: center; padding: 8px; border: px solid #ddd; color: white; align-items: center; background-color: rgb(226, 231, 228); color: rgb(0, 0, 0);">
+                        <tr th:each="estudiante : ${estudiantes}">
+                            <td>[[ ${estudiante.tipoDocumento} ]]</td>
+                            <td>[[ ${estudiante.numeroDocumento} ]]</td>
+                            <td>[[ ${estudiante.primerApellido} ]]</td>
+                            <td>[[ ${estudiante.segundoApellido} ]]</td>
+                            <td>[[ ${estudiante.primerNombre} ]]</td>
+                            <td>[[ ${estudiante.segundoNombre} ]]</td>
+                            <td>[[ ${estudiante.correo} ]]</td>
+                            <td>[[ ${estudiante.telefono} ]]</td>
+                            <td>[[ ${estudiante.numeroRegistro} ]]</td>
+                            <td>[[ ${estudiante.revisado} ]]</td>
+                            <td>
+                                <a class="mx-3 text-warning" th:href="@{/estudiantes/edit/{id}(id = ${estudiante.id})}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-pencil-square edit-icon" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="mx-3 text-danger" th:href="@{/estudiantes/delete/{id}(id = ${estudiante.id})}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-x-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    </main>
+
+    <div class="container mt-3">
+        <div class="text-center">
+            <a th:href="@{/estudiantes/new}" class="btn btn-primary" style="background-color: #0A0A61;"><strong>AGREGAR ADMINISTRADORES</strong></a>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center"> <!-- Cambiado a justify-content-center para centrar los elementos -->
+            <div class="col-md-4">
+                <div class="card" style="background-color: #0A0A61; color: white;">
+                    <img src="https://thebusinessofesports.com/wp-content/uploads/2022/12/Gamers-.jpg" class="card-img-top" alt="Gamer Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">TechSpecter</h5> <!-- Añadido text-center para centrar el título -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="background-color: #0A0A61; color: white;">
+                    <img src="https://www2.claro.com.co/portal/co/noticias/imagenes/1683050160768-6-comunidad-gamer.jpg" class="card-img-top" alt="Gamer Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">						CyberGuardian</h5> <!-- Añadido text-center para centrar el título -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="background-color: #0A0A61; color: white;">
+                    <img src="https://interactivadigital.com/uploads/2021/04/pccomponentes-gaming-120212.jpg" class="card-img-top" alt="Gamer Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">						PixelPatriot</h5> <!-- Añadido text-center para centrar el título -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
